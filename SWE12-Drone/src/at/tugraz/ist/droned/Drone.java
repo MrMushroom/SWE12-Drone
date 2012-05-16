@@ -33,6 +33,7 @@ import at.tugraz.ist.droned.dcf.video.NativeVideoWrapper;
 public class Drone implements IDrone {
 
 	private static Drone drone;
+	private static int stab;
 
 	public final int INTERVAL = 50;
 
