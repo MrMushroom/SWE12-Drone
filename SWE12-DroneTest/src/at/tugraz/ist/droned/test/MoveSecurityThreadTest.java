@@ -37,7 +37,7 @@ public class MoveSecurityThreadTest {
 	    Whitebox.setInternalState(dsl, "reset",0);
 	    
 	    
-	    expect(dsl.isHovering()).andReturn(true).times(1);
+	    expect(dsl.isHovering()).andReturn(true).times(7);
 	    mockDrone.move(0, 0, 0, 0);
 	    expectLastCall().once();
 	    expect(dsl.isHovering()).andReturn(false).times(1);
@@ -68,19 +68,16 @@ public class MoveSecurityThreadTest {
 	    Whitebox.setInternalState(dsl, "reset",0);
 	    
 	    
-	    expect(dsl.isHovering()).andReturn(true).times(1);
+	    expect(dsl.isHovering()).andReturn(true).times(3);
 	    dsl.parseCommand("move,1,1,1,1");
-	    expect(dsl.isHovering()).andReturn(true).times(1);
+	    expect(dsl.isHovering()).andReturn(false).times(2);
 	    
-	    mockDrone.move(0, 0, 0, 0);
-	    expectLastCall().times(1);
-	    expect(dsl.isHovering()).andReturn(false).times(1);
-	   
 	    replayAll();	    
 	    thread.run();
 
 	    
 	    verifyAll();
+	    
 	   
 	}
 

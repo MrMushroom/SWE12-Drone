@@ -43,11 +43,11 @@ public class MoveSecurityThread extends Thread {
 					continue;
 				}
 
-				if (dsl.move && dsl.hovering) {
+				if (dsl.move && dsl.isHovering()) {
 					int old_reset = dsl.reset;
 
 					int counter = 0;
-					while (counter++ < dsl.moveTimeout && dsl.hovering && dsl.move) {
+					while (counter++ < dsl.moveTimeout && dsl.isHovering() && dsl.move) {
 						Thread.sleep(1000);
 						if (old_reset < dsl.reset) {
 							break;
