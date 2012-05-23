@@ -23,15 +23,15 @@ public class MoveSecurityThreadTest {
 	@Test
 	public void TimeoutTest() {
 		
-		DroneSecurityLayer dsl = createMock(DroneSecurityLayer.class);
+/*		DroneSecurityLayer dsl = createMock(DroneSecurityLayer.class);
 		MoveSecurityThread thread = new MoveSecurityThread(dsl);
 		
 		Whitebox.setInternalState(dsl, "hovering", true);
 		Whitebox.setInternalState(dsl, "move", true);
 		Whitebox.setInternalState(dsl, "moveTimeout", 5);
 	    Whitebox.setInternalState(dsl, "reset",0);
-	    
-	   mock
+	*/    
+	   
 	}
 
 }
