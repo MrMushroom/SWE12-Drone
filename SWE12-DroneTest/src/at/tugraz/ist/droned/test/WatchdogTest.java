@@ -1,4 +1,4 @@
-package droneTests;
+package at.tugraz.ist.droned.test;
 
 /*
  * Copyright 2008 the original author or authors.
