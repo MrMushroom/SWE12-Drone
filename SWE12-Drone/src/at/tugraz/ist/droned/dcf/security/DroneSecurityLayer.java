@@ -19,6 +19,7 @@
 package at.tugraz.ist.droned.dcf.security;
 
 import at.tugraz.ist.droned.DroneConsts;
+import at.tugraz.ist.droned.Drone;
 
 public class DroneSecurityLayer {
 
@@ -26,8 +27,22 @@ public class DroneSecurityLayer {
 	boolean move = false;
 	int reset = 0;
 	int moveTimeout = 5;
-
+    Drone drone;
+    
 	private MoveSecurityThread moveSecurityThread = null;
+	
+	public DroneSecurityLayer(Drone newdrone)
+	{
+		drone = newdrone;
+	}
+	
+	public Drone getDrone() {
+		return drone;
+	}
+	
+	public boolean isHovering(){
+		return hovering;
+	}
 
 	public void parseCommand(String cmd) {
 

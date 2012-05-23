@@ -24,9 +24,11 @@ import at.tugraz.ist.droned.DroneConsts;
 public class MoveSecurityThread extends Thread {
 	
 	private DroneSecurityLayer dsl;
+	Drone drone;
 	
 	public MoveSecurityThread(DroneSecurityLayer dsl) {
-		this.dsl = dsl;		
+		this.dsl = dsl;
+		drone = dsl.getDrone();
 	}
 	
 	@Override
@@ -34,7 +36,7 @@ public class MoveSecurityThread extends Thread {
 
 		try {
 
-			while (dsl.hovering) {
+			while (dsl.isHovering()) {
 
 				while (!dsl.move && dsl.hovering) {
 					sleep(100);
@@ -54,7 +56,7 @@ public class MoveSecurityThread extends Thread {
 
 					// timeout
 					if (counter >= dsl.moveTimeout) {
-						Drone.getInstance().move(0, 0, 0, 0);
+						drone.move(0, 0, 0, 0);
 					}
 
 					dsl.reset = 0;

@@ -61,7 +61,7 @@ public class Drone implements IDrone {
 	private Drone() {
 		wifi = new WiFiConnection();
 		config = new DroneConfiguration();
-		dsl = new DroneSecurityLayer();
+		dsl = new DroneSecurityLayer(this);
 //		fwUp = new FirmwareUpdate();
 		flyingMode = DroneConsts.FlyingMode.NORMAL;
 	}
